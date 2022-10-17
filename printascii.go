@@ -2,7 +2,7 @@ package asciiart
 
 import "fmt"
 
-// AsciiCalc returns an int to convert a rune value into place in standard.txt
+// AsciiCalc takes ascii value of rune, applies formula and returns an int
 func AsciiCalc(r int) int {
 	return ((r - 32) * 9) + 1
 }
@@ -31,14 +31,14 @@ func PrintAscii(s []string, a string) {
 	}
 }
 
-// PrintRows prints the rows to the command line
+// PrintRows prints the rows
 func PrintRows(rows []string) {
 	for i := 0; i < 8; i++ {
 		fmt.Println(rows[i])
 	}
 }
 
-// IsStringArrEmpty checks to see whether the array is empty
+// IsStringArrEmpty checks to see whether the row is empty
 func IsStringArrEmpty(rows []string) bool {
 	empty := make([]string, 8)
 	for i := 0; i < len(rows); i++ {
