@@ -6,6 +6,7 @@ import (
 	"strings"
 )
 
+// ReadFile reads a given file and returns the body as a slice of string
 func ReadFile() []string {
 	data, err := os.ReadFile("standard.txt")
 	if err != nil {

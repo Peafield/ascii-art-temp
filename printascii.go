@@ -2,10 +2,12 @@ package asciiart
 
 import "fmt"
 
-func AcciiCalc(r int) int {
+// AsciiCalc returns an int to convert a rune value into place in standard.txt
+func AsciiCalc(r int) int {
 	return ((r - 32) * 9) + 1
 }
 
+// PrintAscii prints out the inputted args
 func PrintAscii(s []string, a string) {
 	str := []rune(a)
 	rows := make([]string, 8)
@@ -20,7 +22,7 @@ func PrintAscii(s []string, a string) {
 			v += 1
 		} else {
 			for i := 0; i < 8; i++ {
-				rows[i] += (s[i+AcciiCalc(int(str[v]))])
+				rows[i] += (s[i+AsciiCalc(int(str[v]))])
 			}
 		}
 	}
@@ -29,12 +31,14 @@ func PrintAscii(s []string, a string) {
 	}
 }
 
+// PrintRows prints the rows to the command line
 func PrintRows(rows []string) {
 	for i := 0; i < 8; i++ {
 		fmt.Println(rows[i])
 	}
 }
 
+// IsStringArrEmpty checks to see whether the array is empty
 func IsStringArrEmpty(rows []string) bool {
 	empty := make([]string, 8)
 	for i := 0; i < len(rows); i++ {
